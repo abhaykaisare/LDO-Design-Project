@@ -103,7 +103,7 @@ The design targets:
 - **Load Regulation:** Swept load current from no-load to full-load and observed output voltage droop.
 
 ![Line Regulation Plot](assets/line_regulation_final.png)  
-![Load Regulation Plot](assets/load_regulation_final.png)
+![Load Regulation Plot](assets/load_regulation_final_1.png)
 
 ---
 
