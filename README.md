@@ -9,7 +9,6 @@
   - [Pass Device](#3-pass-device)
   - [Feedback Network](#4-feedback-network)
 - [Simulation Results](#simulation-results)
-  - [DC Operating Point](#dc-operating-point)
   - [BGR Output Characteristics](#bgr-output-characteristics)
   - [STB Analysis (Loop Gain & PSRR)](#stb-analysis)
   - [Line & Load Regulation](#line--load-regulation)
@@ -30,7 +29,7 @@ The design targets:
 - **Stable operation** across process corners and temperature variations
 
 ### Complete System Schematic
-![Full LDO Schematic](LDO_Last_without_voltage_1.png)
+![Full LDO Schematic](assets/LDO_Last_without_voltage_1.png)
 
 ---
 
@@ -53,9 +52,9 @@ The design targets:
 - Implemented using **PTAT + CTAT combination**.
 - Ensures **reliable startup** with a small current consumption.
 
-![BGR Schematic](BGR_final_last_1.png)
+![BGR Schematic](assets/BGR_final_last_1.png)
 
-![5T OTA](5pack_last_1.png)
+![5T OTA](assets/5pack_last_1.png)
 
 ---
 
@@ -64,7 +63,7 @@ The design targets:
 - Biasing network designed for **self-biasing** to reduce external reference dependency.
 - Compensation capacitor added for stability.
 
-![Folded Cascode Schematic](folded_cascode.png)
+![Folded Cascode Schematic](assets/folded_cascode.png)
 
 ---
 
@@ -82,18 +81,11 @@ The design targets:
 
 ## Simulation Results
 
-### DC Operating Point
-- Confirms proper bias currents and voltage levels across all transistors.
-
-![DC Operating Point Results](dc_operating_point.png)
-
----
-
 ### BGR Output Characteristics
 - **Vref vs Temperature** shows excellent temperature stability.
 - opserved variation of only upto **8 PPM**.
 
-![BGR Output Waveform](vpoint_output_bgr_1.png)
+![BGR Output Waveform](assets/vpoint_output_bgr_1.png)
 
 ---
 
@@ -101,8 +93,8 @@ The design targets:
 - Loop gain simulated to verify **gain > 60 dB** and **phase margin > 60°**.
 - PSRR simulated at multiple frequencies to ensure supply noise rejection.
 
-![Loop Gain Plot](stb_analysis_final.png)  
-![PSRR Plot](psrr_final_analysis.png)
+![Loop Gain Plot](assets/stb_analysis_final.png)  
+![PSRR Plot](assets/psrr_final_analysis.png)
 
 ---
 
@@ -110,8 +102,8 @@ The design targets:
 - **Line Regulation:** Swept input voltage from 1.0 V to 3.0 V and observed Vout variation.
 - **Load Regulation:** Swept load current from no-load to full-load and observed output voltage droop.
 
-![Line Regulation Plot](line_regulation_final.png)  
-![Load Regulation Plot](load_regulation_final.png)
+![Line Regulation Plot](assets/line_regulation_final.png)  
+![Load Regulation Plot](assets/load_regulation_final.png)
 
 ---
 
@@ -121,7 +113,7 @@ The design targets:
 - **Symmetrical placement** of devices to minimize gradient effects.
 - **Mesh routing** used for pass device to minimize IR drop and electromigration risk.
 
-![Layout of LDO](mod_mesh_1.png)
+![Layout of LDO](assets/mod_mesh_1.png)
 
 ---
 
