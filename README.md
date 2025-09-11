@@ -1,2 +1,147 @@
-# LDO-Design-Project
-Design, testing and layout of Low dropout regulator for UMC 180nm technology.
+# 🏗 CMOS Low Dropout (LDO) Regulator Design – 180nm
+
+## Table of Contents
+- [Overview](#overview)
+- [Key Specifications](#key-specifications)
+- [Design and Implementation](#design-and-implementation)
+  - [Bandgap Reference (BGR)](#1-bandgap-reference-bgr)
+  - [Folded Cascode Error Amplifier](#2-folded-cascode-error-amplifier)
+  - [Pass Device](#3-pass-device)
+  - [Feedback Network](#4-feedback-network)
+- [Simulation Results](#simulation-results)
+  - [DC Operating Point](#dc-operating-point)
+  - [BGR Output Characteristics](#bgr-output-characteristics)
+  - [STB Analysis (Loop Gain & PSRR)](#stb-analysis)
+  - [Line & Load Regulation](#line--load-regulation)
+- [Layout](#layout)
+- [Applications](#applications)
+- [Learnings & Takeaways](#learnings--takeaways)
+- [References](#references)
+
+---
+
+## Overview
+This project focuses on the design of a **CMOS Low Dropout (LDO) Regulator** in **180nm technology**.  
+The objective is to regulate the input supply of **1.8 V** to a stable output of **1.5 V**, with a dropout voltage of **0.3 V** and load current up to **100 mA**.
+
+The design targets:
+- **High PSRR** across frequency
+- **Fast transient response** for sudden load changes
+- **Stable operation** across process corners and temperature variations
+
+### Complete System Schematic
+![Full LDO Schematic](LDO_Last_without_voltage_1.png)
+
+---
+
+## Key Specifications
+| Parameter           | Target Value         |
+|--------------------|--------------------|
+| Input Voltage (Vdd) | 1.8 V             |
+| Output Voltage (Vout) | 1.5 V           |
+| Dropout Voltage     | ≤ 0.3 V           |
+| Load Current        | 100 mA             |
+| PSRR @ 1 kHz       | > 50 dB           |
+| Phase Margin       | > 60°             |
+
+---
+
+## Design and Implementation
+
+### 1. Bandgap Reference (BGR)
+- Provides a **temperature-independent reference voltage** for biasing.
+- Implemented using **PTAT + CTAT combination**.
+- Ensures **reliable startup** with a small current consumption.
+
+![BGR Schematic](BGR_final_last_1.png)
+
+![5T OTA](5pack_last_1.png)
+
+---
+
+### 2. Folded Cascode Error Amplifier
+- Chosen for **high DC gain** and **wide output swing**.
+- Biasing network designed for **self-biasing** to reduce external reference dependency.
+- Compensation capacitor added for stability.
+
+![Folded Cascode Schematic](folded_cascode.png)
+
+---
+
+### 3. Pass Device
+- Implemented using a PMOS transistor as the series pass element for low dropout voltage.
+- Size chosen to minimize **Rds(on)** and **keep the device in saturation**.
+
+---
+
+### 4. Feedback Network
+- **Resistive divider** used to scale down Vout.
+- Divider ratio selected to set Vout = 1.5 V.
+
+---
+
+## Simulation Results
+
+### DC Operating Point
+- Confirms proper bias currents and voltage levels across all transistors.
+
+![DC Operating Point Results](dc_operating_point.png)
+
+---
+
+### BGR Output Characteristics
+- **Vref vs Temperature** shows excellent temperature stability.
+- Output settles to a constant value within microseconds after startup.
+
+![BGR Output Waveform](bgr_output_waveform.png)
+
+---
+
+### STB Analysis (Loop Gain & PSRR)
+- Loop gain simulated to verify **gain > 60 dB** and **phase margin > 60°**.
+- PSRR simulated at multiple frequencies to ensure supply noise rejection.
+
+![Loop Gain Plot](stb_analysis_final.png)  
+![PSRR Plot](psrr_final_analysis.png)
+
+---
+
+### Line & Load Regulation
+- **Line Regulation:** Swept input voltage from 1.0 V to 3.0 V and observed Vout variation.
+- **Load Regulation:** Swept load current from no-load to full-load and observed output voltage droop.
+
+![Line Regulation Plot](line_regulation_final.png)  
+![Load Regulation Plot](Load_regulation_final.png)
+
+---
+
+## Layout
+- **Common-centroid layout** used for resistive divider to minimize mismatch.
+- **Guard rings** around sensitive nodes to reduce substrate noise coupling.
+- **Symmetrical placement** of devices to minimize gradient effects.
+- **Mesh routing** used for pass device to minimize IR drop and electromigration risk.
+
+![Layout of LDO](mod_mesh_1.png)
+
+---
+
+## Applications
+- On-chip power management for analog and digital blocks
+- Portable and battery-operated devices
+- IoT sensor nodes with strict power budgets
+
+---
+
+## Learnings & Takeaways
+- Designed and simulated **Bandgap Reference** with excellent temperature stability.
+- Implemented **self-biased folded cascode** for improved gain and PSRR.
+- Learned **layout matching techniques** (common-centroid, interdigitation, guard rings).
+- Performed **corner & Monte Carlo analysis** to ensure robust performance.
+- Gained experience in **frequency compensation** and **loop stability verification**.
+
+---
+
+## References
+- Gray, Hurst, Lewis, Meyer – *Analysis and Design of Analog Integrated Circuits*  
+- Razavi – *Design of Analog CMOS Integrated Circuits*  
+- TI Application Note – *Understanding LDO Stability*
