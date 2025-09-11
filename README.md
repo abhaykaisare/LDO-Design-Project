@@ -48,9 +48,9 @@ The design targets:
 ## Design and Implementation
 
 ### 1. Bandgap Reference (BGR)
-- Provides a **temperature-independent reference voltage** for biasing.
+- Provides a **temperature-independent reference voltage** for vref.
 - Implemented using **PTAT + CTAT combination**.
-- Ensures **reliable startup** with a small current consumption.
+- Implemented **Current Mode** BGR for generating constant 0.9V.
 
 ![BGR Schematic](assets/BGR_final_last_1.png)
 
@@ -59,9 +59,9 @@ The design targets:
 ---
 
 ### 2. Folded Cascode Error Amplifier
+- Chose **PMOS Input** Folded cascode architecture for better noise suppression.
 - Chosen for **high DC gain** and **wide output swing**.
-- Biasing network designed for **self-biasing** to reduce external reference dependency.
-- Compensation capacitor added for stability.
+- Folded cascode has only one dominant pole hence best suited for this application.
 
 ![Folded Cascode Schematic](assets/folded_cascode.png)
 
@@ -108,7 +108,7 @@ The design targets:
 ---
 
 ## Layout
-- **Common-centroid layout** used for resistive divider to minimize mismatch.
+- **Common-centroid layout** used for Mosfets to minimize mismatch.
 - **Guard rings** around sensitive nodes to reduce substrate noise coupling.
 - **Symmetrical placement** of devices to minimize gradient effects.
 - **Mesh routing** used for pass device to minimize IR drop and electromigration risk.
