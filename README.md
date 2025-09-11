@@ -91,9 +91,9 @@ The design targets:
 
 ### BGR Output Characteristics
 - **Vref vs Temperature** shows excellent temperature stability.
-- Output settles to a constant value within microseconds after startup.
+- opserved variation of only upto **8 PPM**.
 
-![BGR Output Waveform](bgr_output_waveform.png)
+![BGR Output Waveform](vpoint_output_bgr_1.png)
 
 ---
 
@@ -111,7 +111,7 @@ The design targets:
 - **Load Regulation:** Swept load current from no-load to full-load and observed output voltage droop.
 
 ![Line Regulation Plot](line_regulation_final.png)  
-![Load Regulation Plot](Load_regulation_final.png)
+![Load Regulation Plot](load_regulation_final.png)
 
 ---
 
@@ -134,14 +134,29 @@ The design targets:
 
 ## Learnings & Takeaways
 - Designed and simulated **Bandgap Reference** with excellent temperature stability.
-- Implemented **self-biased folded cascode** for improved gain and PSRR.
+- Implemented **PMOS input folded cascode** for improved gain and PSRR.
 - Learned **layout matching techniques** (common-centroid, interdigitation, guard rings).
-- Performed **corner & Monte Carlo analysis** to ensure robust performance.
+- Performed **PVT analysis** to ensure robust performance and stability.
 - Gained experience in **frequency compensation** and **loop stability verification**.
 
 ---
 
 ## References
 - Gray, Hurst, Lewis, Meyer – *Analysis and Design of Analog Integrated Circuits*  
-- Razavi – *Design of Analog CMOS Integrated Circuits*  
-- TI Application Note – *Understanding LDO Stability*
+- Razavi – *Design of Analog CMOS Integrated Circuits*
+
+---
+
+## 📫 Contact Me
+If you have any questions, feedback, or suggestions, feel free to connect with me:
+
+- **LinkedIn:** [Abhay Kaisare](https://www.linkedin.com/in/abhay-kaisare-41172b261/)
+- **Email-id :** [Abhay Kaisare](kaisareab@gmail.com)
+
+---
+
+## ⭐ Support This Project
+If you found this project helpful, please give it a **star ⭐** on GitHub — it helps others discover it and motivates me to keep improving.
+
+[![GitHub stars](https://img.shields.io/github/stars/abhaykaisare/LDO-Design-Project?style=social)](https://github.com/abhaykaisare/LDO-Design-Project/stargazers)
+
