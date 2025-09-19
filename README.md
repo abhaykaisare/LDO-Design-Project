@@ -134,7 +134,7 @@ The design targets:
 ---
 
 ## References
-- Gray, Hurst, Lewis, Meyer – *Analysis and Design of Analog Integrated Circuits*  
+- Chen - *Power Management Techniques for Integrated Circuit Design*
 - Razavi – *Design of Analog CMOS Integrated Circuits*
 
 ---
