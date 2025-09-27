@@ -117,10 +117,10 @@ To ensure robust operation across all process, voltage, and temperature corners,
 - **Line Regulation:** Output variation was within ±2% across voltage corners.
 
   ##### Plots
-![PVT Loop Gain Plot](assets/pvt_loop_gain.png)  
-![PVT Phase Margin Plot](assets/pvt_phase_margin.png)  
+![PVT Loop Gain Plot](assets/pvt_gain_plot.png)  
+![PVT Phase Margin Plot](assets/pvt_phase_new.png)  
 ![PVT PSRR Plot](assets/pvt_psrr.png)  
-![PVT Line Regulation Plot](assets/pvt_line_reg.png)
+![PVT Line Regulation Plot](assets/pvt_final_analysis.png)
 
 
 ---
