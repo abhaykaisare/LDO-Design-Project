@@ -105,6 +105,24 @@ The design targets:
 ![Line Regulation Plot](assets/line_regulation_final.png)  
 ![Load Regulation Plot](assets/load_regulation_final_1.png)
 
+### PVT Analysis
+To ensure robust operation across all process, voltage, and temperature corners, a comprehensive **PVT analysis** was performed.
+
+- **Process Corners:** Simulated across TT, FF, SS, SF, FS process corners.
+- **Temperature Range:** Simulated from **-40°C to 125°C**.
+
+#### Key Observations:
+- **Loop Gain & Phase Margin:** Remained >60° across all PVT corners ensuring stability.
+- **PSRR:** Maintained >50 dB up to 1 kHz even in worst-case corner.
+- **Line Regulation:** Output variation was within ±2% across voltage corners.
+
+  ##### Plots
+![PVT Loop Gain Plot](assets/pvt_loop_gain.png)  
+![PVT Phase Margin Plot](assets/pvt_phase_margin.png)  
+![PVT PSRR Plot](assets/pvt_psrr.png)  
+![PVT Line Regulation Plot](assets/pvt_line_reg.png)
+
+
 ---
 
 ## Layout
