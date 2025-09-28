@@ -133,6 +133,8 @@ To ensure robust operation across all process, voltage, and temperature corners,
 - **Mesh routing** used for pass device to minimize IR drop and electromigration risk.
 
 ![Layout of LDO](assets/mod_mesh_1.png)
+![DRC Clear](assets/layout_drc.png)
+![LVS Clear](assets/Layout_lvs.png)
 
 ---
 
