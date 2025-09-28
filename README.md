@@ -121,7 +121,7 @@ To ensure robust operation across all process, voltage, and temperature corners,
 ![PVT Loop Gain Plot](assets/pvt_gain_plot.jpg)  
 ![PVT Phase Margin Plot](assets/pvt_phase_new.jpg)  
 ![PVT PSRR Plot](assets/pvt_psrr.jpg)  
-![PVT Line Regulation Plot](assets/pvt_final_analysis.jpg)
+![PVT Line Regulation Plot](assets/pvt_line_regulation.jpg)
 
 
 ---
